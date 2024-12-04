@@ -4,7 +4,19 @@ export const postType = defineType({
   name: 'post',
   title: 'Post',
   type: 'document',
+  groups: [
+    {
+      title: 'seo',
+      name: 'seo',
+    },
+  ],
   fields: [
+    defineField({
+      name: 'seo',
+      title: 'SEO',
+      type: 'seo',
+      group: 'seo'
+    }),
     defineField({
       name: 'title',
       type: 'string',
@@ -32,10 +44,15 @@ export const postType = defineType({
       of: [{type: 'block'}],
     }),
     defineField({
-      name: 'categorylink',
-      title: 'Category',
-      type: 'reference',
-      to: [{type: 'category'}],
+      name: 'categories',
+      title: 'Categories',
+      type: 'array', 
+  of: [
+    {
+      type: 'reference', 
+      to: [{ type: 'category' }],
+    },
+  ],
     })
   ],
 })
