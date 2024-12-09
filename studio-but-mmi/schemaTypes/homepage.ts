@@ -24,7 +24,7 @@ export const homepage = defineType({
             {
                 name: 'stats',
                 type: 'array',
-                title: 'stats for hero',
+                title: 'stats_for_hero',
                 of: [
                     defineArrayMember({
                         type: 'object',
@@ -35,6 +35,11 @@ export const homepage = defineType({
                         ]
                     })
                 ]
+            },
+            {
+                name: 'image',
+                type: 'image',
+                title: 'image_for_hero'   
             }
         ]
     }),
